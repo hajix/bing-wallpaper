@@ -3,9 +3,10 @@ import os
 import subprocess
 import requests
 import json
+import pwd
 
 # CONSTANT
-BASE_DIR = f'/home/{os.getlogin()}/Pictures/bing-wallpapers'
+BASE_DIR = f'/home/{pwd.getpwuid(os.geteuid()).pw_name}/Pictures/bing-wallpaper'
 BING = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US'
 CMD = 'gsettings set org.gnome.desktop.background picture-uri "file://{}"'
 
